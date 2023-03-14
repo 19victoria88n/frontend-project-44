@@ -1,3 +1,4 @@
 import readlineSync from 'readline-sync';
 
-const name = readlineSync.question('Your answer: ');
+const userName = readlineSync.question('Your answer: ');
+console.log(`Hi ${userName}!`);
