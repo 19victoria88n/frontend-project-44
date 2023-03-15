@@ -31,3 +31,6 @@ update-deps:
 build-run: build run
 
 .PHONY: build
+
+test-coverage:
+	npm test -- --coverage --coverageProvider=v8
