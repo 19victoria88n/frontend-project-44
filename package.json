@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "bin": {
-    "code": "bin/brain-games.js"
+    "code": "bin/brain-games.js",
+    "brain-games": "bin/brain-games.js",
+    "brain-even": "bin/brain-even.js"
   },
   "description": "[![Actions Status](https://github.com/19victoria88n/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/19victoria88n/frontend-project-44/actions)",
   "main": "index.js",
