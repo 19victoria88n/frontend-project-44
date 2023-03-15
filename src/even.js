@@ -25,7 +25,7 @@ const CorrectYes = (checkNum, userAnswer) => checkEven(checkNum) && userAnswer =
 const CorrectNo = (checkNum, userAnswer) => !checkEven(checkNum) && userAnswer === answerArray[1];
 
 const getAnswer = () => {
-  answer = readlineSync.question('Your answer:');
+  answer = readlineSync.question('Your answer: ');
   reverseAnswer = (answer === answerArray[0] ? answerArray[1] : answerArray[0]);
 };
 
