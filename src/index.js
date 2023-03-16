@@ -8,6 +8,11 @@ const getRandomNumber = () => {
   return Math.round(Math.random() * 100);
 };
 
+const arrayRandElement = (arr = ['+', '-', '*']) => {
+  const rand = Math.floor(Math.random() * arr.length);
+  return arr[rand];
+};
+
 const greeting = () => {
   console.log('Welcome to the Brain Games!');
   name = readlineSync.question('May I have your name? ');
@@ -19,11 +24,28 @@ const getAnswer = () => {
 };
 
 const gameRound = () => {
-  const num1 = getRandomNumber(); // Генерация случайного числа
+  const num1 = getRandomNumber();
   const num2 = getRandomNumber();
-  console.log(`Question: ${num1} + ${num2}`);
+  const mathSign = arrayRandElement();
+  console.log(`Question: ${num1} ${mathSign} ${num2}`);
   getAnswer();
-  const correctAnswer = num1 + num2;
+  let correctAnswer = 0;
+  switch (mathSign) {
+    case '+':
+      correctAnswer = num1 + num2;
+      break;
+    case '-':
+      correctAnswer = num1 - num2;
+      break;
+    case '*':
+      correctAnswer = num1 * num2;
+      break;
+    default:
+      correctAnswer = null;
+
+      return correctAnswer;
+  }
+
   if (answer.toString() === correctAnswer.toString()) {
     console.log('Correct!');
     score += 1;
