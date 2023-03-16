@@ -47,23 +47,22 @@ const errorMessage = (userAnswer, reverse, UserName, checkNum) => {
 const checkAnswer = (checkNum, userAnswer) => CorrectYes(checkNum, userAnswer)
   || CorrectNo(checkNum, userAnswer);
 
-const gameRound = () => {
-  question();
-  getAnswer();
-  if (checkAnswer(num, answer)) {
-    correctMessage();
-    checkScore();
-  } else {
-    return errorMessage(answer, reverseAnswer, name, num);
-  }
-};
-
 const checkScore = () => {
   if (score === 3) {
     console.log(`Congratulations, ${name}!`);
   } else {
     gameRound();
   }
+};
+
+const gameRound = () => {
+  question();
+  getAnswer();
+  if (checkAnswer(num, answer)) {
+    return correctMessage();
+    checkScore();
+  }
+  return errorMessage(answer, reverseAnswer, name, num);
 };
 
 const evenGame = () => {
