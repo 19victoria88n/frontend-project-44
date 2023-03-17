@@ -6,15 +6,10 @@ let score = 0;
 
 const getRandomNumber = () => Math.round(Math.random() * 100);
 
-const arrayRandElement = (arr = ['+', '-', '*']) => {
-  const rand = Math.floor(Math.random() * arr.length);
-  return arr[rand];
-};
-
 const greeting = () => {
   console.log('Welcome to the Brain Games!');
   name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!\nWhat is the result of the expression?`);
+  console.log(`Hello, ${name}!\nFind the greatest common divisor of given numbers.`);
 };
 
 const getAnswer = () => {
@@ -22,26 +17,19 @@ const getAnswer = () => {
 };
 
 const gameRound = () => {
-  const num1 = getRandomNumber();
-  const num2 = getRandomNumber();
-  const mathSign = arrayRandElement();
-  console.log(`Question: ${num1} ${mathSign} ${num2}`);
+  let num1 = getRandomNumber();
+  let num2 = getRandomNumber();
+  console.log(`Question: ${num1} ${num2}`);
   getAnswer();
   let correctAnswer = 0;
-  switch (mathSign) {
-    case '+':
+  while ((num1 !== 0) && (num2 !== 0)) {
+    if (num1 > num2) {
+      num1 = num1 % num2;
       correctAnswer = num1 + num2;
-      break;
-    case '-':
-      correctAnswer = num1 - num2;
-      break;
-    case '*':
-      correctAnswer = num1 * num2;
-      break;
-    default:
-      correctAnswer = null;
-
-      return correctAnswer;
+    } else {
+      num2 = num2 % num1;
+      correctAnswer = num1 + num2;
+    }
   }
 
   if (answer.toString() === correctAnswer.toString()) {
@@ -61,9 +49,9 @@ const checkScore = () => {
   }
 };
 
-const brainCalc = () => {
+const brainGcd = () => {
   greeting();
   gameRound();
 };
 
-export default brainCalc;
+export default brainGcd;
