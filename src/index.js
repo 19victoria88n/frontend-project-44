@@ -49,7 +49,7 @@ const gameRound = () => {
     score += 1;
     checkScore();
   } else {
-    console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.\nLet's try again, ${name}!`);
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
   }
 };
 

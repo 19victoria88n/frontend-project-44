@@ -24,10 +24,10 @@ const gameRound = () => {
   let correctAnswer = 0;
   while ((num1 !== 0) && (num2 !== 0)) {
     if (num1 > num2) {
-      num1 = num1 % num2;
+      num1 %= num2;
       correctAnswer = num1 + num2;
     } else {
-      num2 = num2 % num1;
+      num2 %= num1;
       correctAnswer = num1 + num2;
     }
   }
@@ -37,7 +37,7 @@ const gameRound = () => {
     score += 1;
     checkScore();
   } else {
-    console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.\nLet's try again, ${name}!`);
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
   }
 };
 

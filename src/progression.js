@@ -23,7 +23,7 @@ let correctAnswer = 0;
 const newArr = (newArr = arrayRand(), num1 = getRandomNumber()) => {
   correctAnswer = newArr[num1];
   newArr[num1] = '..';
-  return newArr.join(' ');;
+  return newArr.join(' ');
 };
 
 const getAnswer = () => {
@@ -40,7 +40,7 @@ const gameRound = () => {
     score += 1;
     checkScore();
   } else {
-    console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.\nLet's try again, ${name}!`);
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
   }
 };
 
@@ -52,8 +52,8 @@ const checkScore = () => {
   }
 };
 
-const brainCalc = () => {
+const brainProgression = () => {
   greeting();
   gameRound();
 };
-export default brainCalc;
+export default brainProgression;
