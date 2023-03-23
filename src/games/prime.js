@@ -11,7 +11,7 @@ const brainPrime = () => {
     let correctAnswer = 0;
     let sum = 0;
     for (let i = 2; i < num; i += 1) {
-      if ((num % i === 0) && (i < num)) {
+      if (num % i === 0 && i < num) {
         sum += 1;
       }
     }
@@ -20,7 +20,6 @@ const brainPrime = () => {
     } else {
       correctAnswer = 'no';
     }
-
     if (num === 1) {
       correctAnswer = 'no';
     }
