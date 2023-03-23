@@ -6,15 +6,16 @@ const brainPrime = () => {
   const getRandomNumber = () => Math.round(Math.random() * 10);
 
   function isPrime(num) {
-    if (num === 1) {
-      return 'no';
-    }
-    for (let i = 2; i < num; i += 1) {
+    let result = 0;
+    for (let i = 1; i < num; i += 1) {
       if (num % i === 0) {
-        return 'no';
+        result = i;
       }
     }
-    return 'yes';
+    if (result === 1) {
+      return 'yes';
+    }
+    return 'no';
   }
 
   const taskToPrimeGame = () => {
