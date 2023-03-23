@@ -3,7 +3,7 @@ import playGame from '../index.js';
 const brainProgression = () => {
   const noteToEvenGame = 'What number is missing in the progression?';
 
-  const getRandomNumber = () => Math.round(Math.random() * 10);
+  const getRandomNumber = () => Math.round(Math.random() * 9);
 
   const arrayRand = (arrRand = [getRandomNumber()], osnovanie = getRandomNumber()) => {
     for (let i = 1; i < 10; i += 1) {
