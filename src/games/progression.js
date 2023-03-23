@@ -20,7 +20,7 @@ const brainProgression = () => {
     };
 
     const arr = newArrr();
-    const question = `${arr}`;
+    const question = `Question: ${arr}`;
 
     return [question, correctAnswer];
   };

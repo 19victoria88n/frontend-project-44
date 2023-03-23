@@ -9,7 +9,7 @@ const playGame = (noteToGame, taskToGame) => {
 
   for (let i = 0; i < 3; i += 1) {
     const pairOfQuestionAndResult = taskToGame();
-    console.log('Question:', pairOfQuestionAndResult[0]);
+    console.log(pairOfQuestionAndResult[0]);
     const answer = readlineSync.question('Your answer: ');
 
     const correctAnswer = pairOfQuestionAndResult[1];

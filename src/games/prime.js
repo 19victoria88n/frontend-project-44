@@ -20,7 +20,7 @@ const brainPrime = () => {
 
   const taskToPrimeGame = () => {
     const num = getRandomNumber();
-    const question = `${num}`;
+    const question = `Question: ${num}`;
     const correctAnswer = isPrime(num);
     return [question, correctAnswer];
   };

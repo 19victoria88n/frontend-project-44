@@ -14,7 +14,7 @@ const brainCalc = () => {
     const num1 = getRandomNumber();
     const num2 = getRandomNumber();
     const mathSign = arrayRandElement();
-    const question = `${num1} ${mathSign} ${num2}`;
+    const question = `Question: ${num1} ${mathSign} ${num2}`;
     let correctAnswer = 0;
     switch (mathSign) {
       case '+':

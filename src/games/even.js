@@ -8,7 +8,7 @@ const evenGame = () => {
   const taskToEvenGame = () => {
     const num = getRandomNumber();
 
-    const question = `${num}`;
+    const question = `Question: ${num}`;
 
     let correctAnswer = '';
     if (num % 2 === 0) {

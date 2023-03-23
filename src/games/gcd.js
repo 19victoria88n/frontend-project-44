@@ -6,7 +6,7 @@ const brainGcd = () => {
   const taskToEvenGame = () => {
     let num1 = getRandomNumber();
     let num2 = getRandomNumber();
-    const question = `${num1} ${num2}`;
+    const question = `Question: ${num1} ${num2}`;
     let correctAnswer = num1 + num2;
     while (num1 !== 0 && num2 !== 0) {
       if (num1 > num2) {
