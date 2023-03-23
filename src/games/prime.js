@@ -5,13 +5,11 @@ const brainPrime = () => {
 
   const getRandomNumber = () => Math.round(Math.random() * 10);
 
-  const taskToEvenGame = () => {
-    const num = getRandomNumber();
-    const question = `${num}`;
+  const isPrime = (n) => {
     let correctAnswer = 0;
     let sum = 0;
-    for (let i = 2; i < num; i += 1) {
-      if (num % i === 0 && i < num) {
+    for (let i = 2; i < n; i += 1) {
+      if (n % i === 0 && i < n) {
         sum += 1;
       }
     }
@@ -20,12 +18,19 @@ const brainPrime = () => {
     } else {
       correctAnswer = 'no';
     }
-    if (num === 1) {
+    if (n === 1) {
       correctAnswer = 'no';
     }
-    if (num === 2) {
+    if (n === 2) {
       correctAnswer = 'yes';
     }
+    return correctAnswer;
+  };
+
+  const taskToEvenGame = () => {
+    const num = getRandomNumber();
+    const question = `${num}`;
+    let correctAnswer = isPrime(num);
     return [question, correctAnswer];
   };
 
