@@ -1,2 +1,3 @@
 node_modules
-app
+.github/workflows/app
+.github/workflows/Makefile
