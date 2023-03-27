@@ -11,7 +11,7 @@
     "brain-progression": "bin/brain-progression.js",
     "brain-prime": "bin/brain-prime.js"
   },
-  "description": "project with brain-games (brain-calc, brain-even, brain-gcd, brain-prime, brain-progression).",
+  "description": "[![Actions Status](https://github.com/19victoria88n/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/19victoria88n/frontend-project-44/actions)",
   //"main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

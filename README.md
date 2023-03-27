@@ -26,29 +26,21 @@ make publish
 
 ## Games:
 
-### brain-calc
-
-```bash
-make  brain-calc
-```
-
-[![asciicast](https://asciinema.org/a/ixaHJEgVdbuBGbqqR5IuJJ2h1.svg)](https://asciinema.org/a/ixaHJEgVdbuBGbqqR5IuJJ2h1)
-
 ### brain-even
 
 ```bash
 make  brain-even
 ```
 
-[![asciicast](https://asciinema.org/a/YohFnXLvmQdjWPxBfRbBDIz3g.svg)](https://asciinema.org/a/YohFnXLvmQdjWPxBfRbBDIz3g)
+[![asciicast](https://asciinema.org/a/ixaHJEgVdbuBGbqqR5IuJJ2h1.svg)](https://asciinema.org/a/ixaHJEgVdbuBGbqqR5IuJJ2h1)
 
-### brain-prime
+### brain-calc
 
 ```bash
-make  brain-prime
+make  brain-calc
 ```
 
-[![asciicast](https://asciinema.org/a/WFBF4ll37KKBiVQr5Uz26GOHP.svg)](https://asciinema.org/a/WFBF4ll37KKBiVQr5Uz26GOHP)
+[![asciicast](https://asciinema.org/a/YohFnXLvmQdjWPxBfRbBDIz3g.svg)](https://asciinema.org/a/YohFnXLvmQdjWPxBfRbBDIz3g)
 
 ### brain-gcd
 
@@ -56,12 +48,20 @@ make  brain-prime
 make  brain-gcd
 ```
 
-[![asciicast](https://asciinema.org/a/KOY3inevf9SUbxTfR4Hyq1qs0.svg)](https://asciinema.org/a/KOY3inevf9SUbxTfR4Hyq1qs0)
+[![asciicast](https://asciinema.org/a/WFBF4ll37KKBiVQr5Uz26GOHP.svg)](https://asciinema.org/a/WFBF4ll37KKBiVQr5Uz26GOHP)
 
 ### brain-progression
 
 ```bash
 make  brain-progression
+```
+
+[![asciicast](https://asciinema.org/a/KOY3inevf9SUbxTfR4Hyq1qs0.svg)](https://asciinema.org/a/KOY3inevf9SUbxTfR4Hyq1qs0)
+
+### brain-prime
+
+```bash
+make  brain-prime
 ```
 
 [![asciicast](https://asciinema.org/a/tYDIdiyPYqDTBAd2R0HmeNQBu.svg)](https://asciinema.org/a/tYDIdiyPYqDTBAd2R0HmeNQBu)
