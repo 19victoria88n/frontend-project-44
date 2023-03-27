@@ -4,12 +4,64 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/999d28bb5d23baf0da19/maintainability)](https://codeclimate.com/github/19victoria88n/frontend-project-44/maintainability)
 
-https://asciinema.org/a/ixaHJEgVdbuBGbqqR5IuJJ2h1
+A project "Brain-Games" includes several games with three questions.
 
-https://asciinema.org/a/YohFnXLvmQdjWPxBfRbBDIz3g
+## Setup
 
-https://asciinema.org/a/WFBF4ll37KKBiVQr5Uz26GOHP
+```bash
+make install
+```
 
-https://asciinema.org/a/KOY3inevf9SUbxTfR4Hyq1qs0
+## Run checkstyle
 
-https://asciinema.org/a/tYDIdiyPYqDTBAd2R0HmeNQBu
+```bash
+make lint
+```
+
+## Publish
+
+```bash
+make publish
+```
+
+## Games:
+
+### brain-calc
+
+```bash
+make  brain-calc
+```
+
+[![asciicast](https://asciinema.org/a/ixaHJEgVdbuBGbqqR5IuJJ2h1.svg)](https://asciinema.org/a/ixaHJEgVdbuBGbqqR5IuJJ2h1)
+
+### brain-even
+
+```bash
+make  brain-even
+```
+
+[![asciicast](https://asciinema.org/a/YohFnXLvmQdjWPxBfRbBDIz3g.svg)](https://asciinema.org/a/YohFnXLvmQdjWPxBfRbBDIz3g)
+
+### brain-prime
+
+```bash
+make  brain-prime
+```
+
+[![asciicast](https://asciinema.org/a/WFBF4ll37KKBiVQr5Uz26GOHP.svg)](https://asciinema.org/a/WFBF4ll37KKBiVQr5Uz26GOHP)
+
+### brain-gcd
+
+```bash
+make  brain-gcd
+```
+
+[![asciicast](https://asciinema.org/a/KOY3inevf9SUbxTfR4Hyq1qs0.svg)](https://asciinema.org/a/KOY3inevf9SUbxTfR4Hyq1qs0)
+
+### brain-progression
+
+```bash
+make  brain-progression
+```
+
+[![asciicast](https://asciinema.org/a/tYDIdiyPYqDTBAd2R0HmeNQBu.svg)](https://asciinema.org/a/tYDIdiyPYqDTBAd2R0HmeNQBu)
