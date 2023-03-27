@@ -12,7 +12,6 @@
     "brain-prime": "bin/brain-prime.js"
   },
   "description": "brain-games: brain-even, brain-calc, brain-gcd, brain-progression, brain-prime",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
