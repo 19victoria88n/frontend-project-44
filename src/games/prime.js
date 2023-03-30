@@ -1,31 +1,28 @@
 import playGame from '../index.js';
+import getRandomInRange from '../utils.js';
 
-const brainPrime = () => {
-  const noteToPrimeGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-  const getRandomNumber = () => Math.round(Math.random() * 10);
-
-  function isPrime(num) {
-    let result = 0;
-    for (let i = 1; i < num; i += 1) {
-      if (num % i === 0) {
-        result = i;
-      }
+function isPrime(num) {
+  let result = 0;
+  for (let i = 1; i < num; i += 1) {
+    if (num % i === 0) {
+      result = i;
     }
-    if (result === 1) {
-      return 'yes';
-    }
-    return 'no';
   }
+  if (result === 1) {
+    return 'yes';
+  }
+  return 'no';
+}
 
-  const taskToPrimeGame = () => {
-    const num = getRandomNumber();
-    const question = `Question: ${num}`;
-    const correctAnswer = isPrime(num);
-    return [question, correctAnswer];
-  };
-
-  playGame(noteToPrimeGame, taskToPrimeGame);
+const runPrimeGame = () => {
+  const num = getRandomInRange(0, 10);
+  const question = `Question: ${num}`;
+  const answer = isPrime(num);
+  return [question, answer];
 };
 
-export default brainPrime;
+playGame(rules, runPrimeGame);
+
+export default runPrimeGame;

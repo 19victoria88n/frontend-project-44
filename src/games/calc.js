@@ -1,38 +1,35 @@
 import playGame from '../index.js';
+import getRandomInRange from '../utils.js';
 
-const arrayRandElement = (arr = ['+', '-', '*']) => {
-  const rand = Math.floor(Math.random() * arr.length);
-  return arr[rand];
+const rules = 'What is the result of the expression?';
+
+const getRandomOperator = () => {
+  const operators = ['+', '-', '*'];
+  return operators[getRandomInRange(0, operators.length - 1)];
 };
 
-const brainCalc = () => {
-  const noteToEvenGame = 'What is the result of the expression?';
-
-  const getRandomNumber = () => Math.round(Math.random() * 10);
-
-  const taskToEvenGame = () => {
-    const num1 = getRandomNumber();
-    const num2 = getRandomNumber();
-    const mathSign = arrayRandElement();
-    const question = `Question: ${num1} ${mathSign} ${num2}`;
-    let correctAnswer = 0;
-    switch (mathSign) {
-      case '+':
-        correctAnswer = num1 + num2;
-        break;
-      case '-':
-        correctAnswer = num1 - num2;
-        break;
-      case '*':
-        correctAnswer = num1 * num2;
-        break;
-      default:
-        correctAnswer = null;
-    }
-    return [question, correctAnswer];
-  };
-
-  playGame(noteToEvenGame, taskToEvenGame);
+const calculation = (num1, num2, operator) => {
+  switch (operator) {
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    case '*':
+      return num1 * num2;
+    default:
+      throw new Error(`Operator ${operator} - is incorrect!`);
+  }
 };
 
-export default brainCalc;
+const runCalcGame = () => {
+  const num1 = getRandomInRange(0, 100);
+  const num2 = getRandomInRange(0, 100);
+  const mathSign = getRandomOperator();
+  const question = `Question: ${num1} ${mathSign} ${num2}`;
+  const answer = (calculation(num1, num2, mathSign)).toString();
+  return [question, answer];
+};
+
+playGame(rules, runCalcGame);
+
+export default runCalcGame;

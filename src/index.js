@@ -7,14 +7,15 @@ const playGame = (noteToGame, taskToGame) => {
 
   console.log(noteToGame);
 
-  for (let i = 0; i < 3; i += 1) {
+  const roundsCount = 3;
+  for (let i = 0; i < roundsCount; i += 1) {
     const pairOfQuestionAndResult = taskToGame();
     console.log(pairOfQuestionAndResult[0]);
     const answer = readlineSync.question('Your answer: ');
 
     const correctAnswer = pairOfQuestionAndResult[1];
 
-    if (answer.toString() === correctAnswer.toString()) {
+    if (answer === correctAnswer) {
       console.log('Correct!');
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \nLet's try again, ${userName}!`);

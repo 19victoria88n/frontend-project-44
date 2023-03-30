@@ -1,37 +1,39 @@
 /* eslint-disable no-shadow */
 import playGame from '../index.js';
+import getRandomInRange from '../utils.js';
 
-const brainProgression = () => {
-  const noteToEvenGame = 'What number is missing in the progression?';
+const rules = 'What number is missing in the progression?';
 
-  const getRandomNumber = () => Math.round(Math.random() * 9);
-
-  const randProgression = (num = getRandomNumber(10), osnovanie = getRandomNumber(10)) => {
-    const randProgression = [];
-    let firstElement = num;
-    for (let i = 1; i < 11; i += 1) {
-      randProgression.push(firstElement);
-      firstElement += osnovanie;
-    }
-    return randProgression;
-  };
-
-  const taskToEvenGame = () => {
-    let correctAnswer = 0;
-    const progression = (newArr = randProgression(), num1 = getRandomNumber()) => {
-      correctAnswer = newArr[num1];
-      // eslint-disable-next-line no-param-reassign
-      newArr[num1] = '..';
-      return newArr.join(' ');
-    };
-
-    const arr = progression();
-    const question = `Question: ${arr}`;
-
-    return [question, correctAnswer];
-  };
-
-  playGame(noteToEvenGame, taskToEvenGame);
+const randProgression = (first, osnovanie) => {
+  const randProgression = [];
+  let firstElement = first;
+  for (let i = 1; i < 11; i += 1) {
+    randProgression.push(firstElement);
+    firstElement += osnovanie;
+  }
+  return randProgression;
 };
 
-export default brainProgression;
+let missingElement = '';
+const getMissingElement = (newArr, num1) => {
+  missingElement = newArr[num1];
+  // eslint-disable-next-line no-param-reassign
+  newArr[num1] = '..';
+  return newArr.join(' ');
+};
+
+const runProgressionGame = () => {
+  const first = getRandomInRange(0, 10);
+  const osnovanie = getRandomInRange(0, 10);
+  const newArr = randProgression(first, osnovanie);
+  const num1 = getRandomInRange(0, 10);
+  const progression = getMissingElement(newArr, num1);
+  const answer = (missingElement).toString();
+  const question = `Question: ${progression}`;
+
+  return [question, answer];
+};
+
+playGame(rules, runProgressionGame);
+
+export default runProgressionGame;
