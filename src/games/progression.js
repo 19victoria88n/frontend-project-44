@@ -4,32 +4,25 @@ import getRandomInRange from '../utils.js';
 
 const rules = 'What number is missing in the progression?';
 
-const randProgression = (first, osnovanie) => {
+const randProgression = (first, osnovanie, length) => {
   const randProgression = [];
   let firstElement = first;
-  for (let i = 1; i < 11; i += 1) {
+  for (let i = 1; i < length; i += 1) {
     randProgression.push(firstElement);
     firstElement += osnovanie;
   }
   return randProgression;
 };
 
-let missingElement = '';
-const getMissingElement = (newArr, num1) => {
-  missingElement = newArr[num1];
-  // eslint-disable-next-line no-param-reassign
-  newArr[num1] = '..';
-  return newArr.join(' ');
-};
-
 const runProgressionGame = () => {
   const first = getRandomInRange(0, 10);
   const osnovanie = getRandomInRange(0, 10);
-  const newArr = randProgression(first, osnovanie);
-  const num1 = getRandomInRange(0, 10);
-  const progression = getMissingElement(newArr, num1);
-  const answer = (missingElement).toString();
-  const question = `Question: ${progression}`;
+  const length = 11;
+  const progression = randProgression(first, osnovanie, length);
+  const hiddenIndex = getRandomInRange(0, 10);
+  const answer = (progression[hiddenIndex]).toString();
+  progression[hiddenIndex] = '..';
+  const question = `Question: ${progression.join(' ')}`;
 
   return [question, answer];
 };

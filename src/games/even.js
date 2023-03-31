@@ -3,17 +3,12 @@ import getRandomInRange from '../utils.js';
 
 const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const isEven = (num) => {
-  if (num % 2 === 0) {
-    return 'yes';
-  }
-  return 'no';
-};
+const isEven = (num) => num % 2 === 0;
 
 const runEvenGame = () => {
   const num = getRandomInRange(0, 10);
   const question = `Question: ${num}`;
-  const answer = isEven(num);
+  const answer = isEven(num) ? 'yes' : 'no';
   return [question, answer];
 };
 

@@ -1,5 +1,5 @@
 function getRandomInRange(min, max) {
-  return Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min)) + Math.ceil(min));
+  return Math.floor(min + Math.random() * (max - min + 1));
 }
 
 export default getRandomInRange;

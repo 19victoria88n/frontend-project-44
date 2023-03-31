@@ -11,15 +11,15 @@ function isPrime(num) {
     }
   }
   if (result === 1) {
-    return 'yes';
+    return true;
   }
-  return 'no';
+  return false;
 }
 
 const runPrimeGame = () => {
   const num = getRandomInRange(0, 10);
   const question = `Question: ${num}`;
-  const answer = isPrime(num);
+  const answer = isPrime(num) ? 'yes' : 'no';
   return [question, answer];
 };
 

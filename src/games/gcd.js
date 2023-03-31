@@ -4,19 +4,10 @@ import getRandomInRange from '../utils.js';
 const rules = 'Find the greatest common divisor of given numbers.';
 
 const getGcd = (num1, num2) => {
-  let correctAnswer = num1 + num2;
-  while (num1 !== 0 && num2 !== 0) {
-    if (num1 > num2) {
-      // eslint-disable-next-line no-param-reassign
-      num1 %= num2;
-      correctAnswer = num1 + num2;
-    } else {
-      // eslint-disable-next-line no-param-reassign
-      num2 %= num1;
-      correctAnswer = num1 + num2;
-    }
+  if (num1 === 0) {
+    return num2;
   }
-  return correctAnswer;
+  return getGcd(num2 % num1, num1);
 };
 
 function runGcdGame() {
