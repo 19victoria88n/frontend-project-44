@@ -14,7 +14,7 @@ const randProgression = (first, osnovanie, length) => {
   return randProgression;
 };
 
-const runProgressionGame = () => {
+const generateRound = () => {
   const first = getRandomInRange(0, 10);
   const osnovanie = getRandomInRange(0, 10);
   const length = getRandomInRange(5, 10);
@@ -27,6 +27,4 @@ const runProgressionGame = () => {
   return [question, answer];
 };
 
-playGame(rules, runProgressionGame);
-
-export default runProgressionGame;
+export default () => playGame(rules, generateRound);

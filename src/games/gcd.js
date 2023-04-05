@@ -10,7 +10,7 @@ const getGcd = (num1, num2) => {
   return getGcd(num2 % num1, num1);
 };
 
-function runGcdGame() {
+function generateRound() {
   const num1 = getRandomInRange(0, 10);
   const num2 = getRandomInRange(0, 10);
   const question = `Question: ${num1} ${num2}`;
@@ -18,6 +18,4 @@ function runGcdGame() {
   return [question, answer];
 }
 
-playGame(rules, runGcdGame);
-
-export default runGcdGame;
+export default () => playGame(rules, generateRound);

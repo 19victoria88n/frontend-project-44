@@ -21,7 +21,7 @@ const calculation = (num1, num2, operator) => {
   }
 };
 
-const runCalcGame = () => {
+const generateRound = () => {
   const num1 = getRandomInRange(0, 100);
   const num2 = getRandomInRange(0, 100);
   const mathSign = getRandomOperator();
@@ -30,6 +30,4 @@ const runCalcGame = () => {
   return [question, answer];
 };
 
-playGame(rules, runCalcGame);
-
-export default runCalcGame;
+export default () => playGame(rules, generateRound);
