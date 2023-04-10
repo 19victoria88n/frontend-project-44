@@ -1,28 +1,27 @@
-/* eslint-disable no-shadow */
 import playGame from '../index.js';
 import getRandomInRange from '../utils.js';
 
 const rules = 'What number is missing in the progression?';
 
 const randProgression = (first, osnovanie, length) => {
-  const randProgression = [];
+  const progression = [];
   let firstElement = first;
   for (let i = 1; i <= length; i += 1) {
-    randProgression.push(firstElement);
+    progression.push(firstElement);
     firstElement += osnovanie;
   }
-  return randProgression;
+  return progression;
 };
 
 const generateRound = () => {
-  const first = getRandomInRange(0, 10);
-  const osnovanie = getRandomInRange(0, 10);
-  const length = getRandomInRange(5, 10);
-  const progression = randProgression(first, osnovanie, length);
-  const hiddenIndex = getRandomInRange(0, length - 1);
+  const firstNumber = getRandomInRange(0, 10);
+  const commonDiff = getRandomInRange(0, 10);
+  const lengthofProgression = getRandomInRange(5, 10);
+  const progression = randProgression(firstNumber, commonDiff, lengthofProgression);
+  const hiddenIndex = getRandomInRange(0, lengthofProgression - 1);
   const answer = (progression[hiddenIndex]).toString();
   progression[hiddenIndex] = '..';
-  const question = `Question: ${progression.join(' ')}`;
+  const question = `${progression.join(' ')}`;
 
   return [question, answer];
 };

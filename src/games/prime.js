@@ -3,23 +3,19 @@ import getRandomInRange from '../utils.js';
 
 const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-function isPrime(num) {
-  let result = 0;
-  for (let i = 1; i < num; i += 1) {
+const isPrime = (num) => {
+  for (let i = 2; i < num; i += 1) {
     if (num % i === 0) {
-      result = i;
+      return false;
     }
   }
-  if (result === 1) {
-    return true;
-  }
-  return false;
-}
+  return num > 1;
+};
 
 const generateRound = () => {
-  const num = getRandomInRange(0, 10);
-  const question = `Question: ${num}`;
-  const answer = isPrime(num) ? 'yes' : 'no';
+  const randomNumber = getRandomInRange(0, 10);
+  const question = `${randomNumber}`;
+  const answer = isPrime(randomNumber) ? 'yes' : 'no';
   return [question, answer];
 };
 

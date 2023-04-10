@@ -1,12 +1,10 @@
 import playGame from '../index.js';
 import getRandomInRange from '../utils.js';
 
-const rules = 'What is the result of the expression?';
+const rule = 'What is the result of the expression?';
+const operators = ['+', '-', '*'];
 
-const getRandomOperator = () => {
-  const operators = ['+', '-', '*'];
-  return operators[getRandomInRange(0, operators.length - 1)];
-};
+const getRandomOperator = () => operators[getRandomInRange(0, operators.length - 1)];
 
 const calculation = (num1, num2, operator) => {
   switch (operator) {
@@ -22,12 +20,12 @@ const calculation = (num1, num2, operator) => {
 };
 
 const generateRound = () => {
-  const num1 = getRandomInRange(0, 100);
-  const num2 = getRandomInRange(0, 100);
+  const randomNumber1 = getRandomInRange(0, 100);
+  const randomNumber2 = getRandomInRange(0, 100);
   const mathSign = getRandomOperator();
-  const question = `Question: ${num1} ${mathSign} ${num2}`;
-  const answer = (calculation(num1, num2, mathSign)).toString();
+  const question = `${randomNumber1} ${mathSign} ${randomNumber2}`;
+  const answer = (calculation(randomNumber1, randomNumber2, mathSign)).toString();
   return [question, answer];
 };
 
-export default () => playGame(rules, generateRound);
+export default () => playGame(rule, generateRound);

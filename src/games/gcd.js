@@ -11,10 +11,10 @@ const getGcd = (num1, num2) => {
 };
 
 function generateRound() {
-  const num1 = getRandomInRange(0, 10);
-  const num2 = getRandomInRange(0, 10);
-  const question = `Question: ${num1} ${num2}`;
-  const answer = (getGcd(num1, num2).toString());
+  const randomNumber1 = getRandomInRange(0, 10);
+  const randomNumber2 = getRandomInRange(0, 10);
+  const question = `${randomNumber1} ${randomNumber2}`;
+  const answer = (getGcd(randomNumber1, randomNumber2).toString());
   return [question, answer];
 }
 
