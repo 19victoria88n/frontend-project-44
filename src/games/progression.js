@@ -1,9 +1,11 @@
 import playGame from '../index.js';
 import getRandomInRange from '../utils.js';
 
-const rules = 'What number is missing in the progression?';
+const rule = 'What number is missing in the progression?';
+const maxNumber = 10;
+const minNumber = 5;
 
-const randProgression = (first, osnovanie, length) => {
+const getRandProgression = (first, osnovanie, length) => {
   const progression = [];
   let firstElement = first;
   for (let i = 1; i <= length; i += 1) {
@@ -14,10 +16,10 @@ const randProgression = (first, osnovanie, length) => {
 };
 
 const generateRound = () => {
-  const firstNumber = getRandomInRange(0, 10);
-  const commonDiff = getRandomInRange(0, 10);
-  const lengthofProgression = getRandomInRange(5, 10);
-  const progression = randProgression(firstNumber, commonDiff, lengthofProgression);
+  const firstNumber = getRandomInRange(0, maxNumber);
+  const commonDiff = getRandomInRange(0, maxNumber);
+  const lengthofProgression = getRandomInRange(minNumber, maxNumber);
+  const progression = getRandProgression(firstNumber, commonDiff, lengthofProgression);
   const hiddenIndex = getRandomInRange(0, lengthofProgression - 1);
   const answer = (progression[hiddenIndex]).toString();
   progression[hiddenIndex] = '..';
@@ -26,4 +28,4 @@ const generateRound = () => {
   return [question, answer];
 };
 
-export default () => playGame(rules, generateRound);
+export default () => playGame(rule, generateRound);

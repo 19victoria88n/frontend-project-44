@@ -3,10 +3,11 @@ import getRandomInRange from '../utils.js';
 
 const rule = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
+const maxNumber = 100;
 
 const getRandomOperator = () => operators[getRandomInRange(0, operators.length - 1)];
 
-const calculation = (num1, num2, operator) => {
+const getCalc = (num1, num2, operator) => {
   switch (operator) {
     case '+':
       return num1 + num2;
@@ -20,11 +21,11 @@ const calculation = (num1, num2, operator) => {
 };
 
 const generateRound = () => {
-  const randomNumber1 = getRandomInRange(0, 100);
-  const randomNumber2 = getRandomInRange(0, 100);
+  const number1 = getRandomInRange(0, maxNumber);
+  const number2 = getRandomInRange(0, maxNumber);
   const mathSign = getRandomOperator();
-  const question = `${randomNumber1} ${mathSign} ${randomNumber2}`;
-  const answer = (calculation(randomNumber1, randomNumber2, mathSign)).toString();
+  const question = `${number1} ${mathSign} ${number2}`;
+  const answer = (getCalc(number1, number2, mathSign)).toString();
   return [question, answer];
 };
 
